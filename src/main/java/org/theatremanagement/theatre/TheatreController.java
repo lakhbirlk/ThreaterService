@@ -23,7 +23,7 @@ public class TheatreController {
     }
 
     @GetMapping
-    public ResponseEntity<List<TheatreDoc>> getAllTheatres() {
+    public ResponseEntity<List<Theatre>> getAllTheatres() {
         return new ResponseEntity<>(theatreService.getAllTheatres(), HttpStatus.OK);
     }
 

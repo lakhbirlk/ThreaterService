@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    container_name: keycloak
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+      - KEYCLOAK_LOGLEVEL=DEBUG
+      - KEYCLOAK_DEV_MODE=true
+    ports:
+      - "8080:8080"
+    volumes:
+      - keycloak-data:/opt/keycloak/data
+    networks:
+      - keycloak-network
+    restart: always
+    command:
+      - "start-dev"
+
+volumes:
+  keycloak-data:
+
+networks:
+  keycloak-network:
+    driver: bridge

@@ -32,8 +32,8 @@ public  class TheatreService{
      *
      * @return List of theatres
      */
-    public List<TheatreDoc> getAllTheatres() {
-     return   theatreElasticsearchRepository.findAll(PageRequest.of(0, 10)).getContent();
+    public List<Theatre> getAllTheatres() {
+     return   theatreRepository.findAll(PageRequest.of(0, 10)).getContent();
         //return docs.stream().map(org.theatremanagement.theatre.mapper.TheatreToTheatreDocMapper::toTheatre).toList();
     }
 
@@ -63,8 +63,8 @@ public Theatre updateTheatre(Long theatreId, Theatre updatedTheatre) {
 
     existingTheatre.setName(updatedTheatre.getName());
     existingTheatre.setLocation(updatedTheatre.getLocation());
-    theatreElasticsearchRepository.deleteById(existingTheatre.getId());
-    theatreElasticsearchRepository.save(org.theatremanagement.theatre.mapper.TheatreToTheatreDocMapper.toTheatreDoc(existingTheatre));
+    //theatreElasticsearchRepository.deleteById(existingTheatre.getId());
+    //theatreElasticsearchRepository.save(org.theatremanagement.theatre.mapper.TheatreToTheatreDocMapper.toTheatreDoc(existingTheatre));
     return theatreRepository.save(existingTheatre);
 }
 
