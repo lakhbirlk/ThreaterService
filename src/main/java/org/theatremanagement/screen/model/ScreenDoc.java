@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.springframework.data.elasticsearch.annotations.Document;
-import org.theatremanagement.theatre.Theatre;
+import org.theatremanagement.theatre.model.Theatre;
 
     // screen.java
     @Document(indexName = "screen")

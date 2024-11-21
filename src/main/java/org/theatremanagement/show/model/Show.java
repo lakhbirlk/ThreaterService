@@ -16,11 +16,13 @@ public class Show {
     private Long id;
 
     private String title;
+    private Long movieID;
     private LocalDateTime showTime;
+    private int durationDays;
+    private int showLength;
+    private Long screenId;
+    private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "screen_id")
-    private Screen screen;
 
     // Getters and Setters
 }

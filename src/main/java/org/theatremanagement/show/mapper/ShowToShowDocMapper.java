@@ -17,7 +17,7 @@ public class ShowToShowDocMapper {
         showDoc.setId(show.getId());
         showDoc.setTitle(show.getTitle());
         showDoc.setShowTime(show.getShowTime());
-        showDoc.setScreen(show.getScreen()); // Map the Screen object directly
+        showDoc.setScreenId(show.getScreenId()); // Map the Screen object directly
         return showDoc;
     }
 
@@ -31,7 +31,7 @@ public class ShowToShowDocMapper {
         show.setId(showDoc.getId());
         show.setTitle(showDoc.getTitle());
         show.setShowTime(showDoc.getShowTime());
-        show.setScreen(showDoc.getScreen()); // Map the Screen object directly
+        show.setScreenId(showDoc.getScreenId()); // Map the Screen object directly
         return show;
     }
 }

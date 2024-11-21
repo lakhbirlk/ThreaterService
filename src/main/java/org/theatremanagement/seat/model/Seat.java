@@ -15,8 +15,10 @@ public class Seat {
     private Long id;
 
     private String seatNumber;
-    private boolean isAvailable;
+    @Enumerated(EnumType.STRING)
+    private SeatAvailabilityStatus Status;
 
+    private Long screenID;
     @ManyToOne
     @JoinColumn(name = "show_id")
     private Show show;

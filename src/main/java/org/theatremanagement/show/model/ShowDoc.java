@@ -18,9 +18,7 @@ public class ShowDoc {
     private String title;
     private LocalDateTime showTime;
 
-    @ManyToOne
-    @JoinColumn(name = "screen_id")
-    private Screen screen;
+    private Long screenId;
 
     // Getters and Setters
 }

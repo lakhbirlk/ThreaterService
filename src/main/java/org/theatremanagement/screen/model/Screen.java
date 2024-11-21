@@ -3,8 +3,10 @@ package org.theatremanagement.screen.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
-import org.springframework.data.elasticsearch.annotations.Document;
-import org.theatremanagement.theatre.Theatre;
+import org.theatremanagement.theatre.model.Theatre;
+
+import java.util.ArrayList;
+import java.util.List;
 
 // screen.java
 
@@ -22,5 +24,7 @@ public class Screen {
     @JsonBackReference // to avoid infinite recursion
     private Theatre theatre;
 
+    @OneToMany(mappedBy = "screen", orphanRemoval = true)
+    private List<ScreenChart> screenCharts = new ArrayList<>();
     // Getters and Setters
 }
